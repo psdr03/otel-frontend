@@ -18,7 +18,6 @@ const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 const exporter = new OTLPTraceExporter({
   url: "https://ingest.au0.signalfx.com/v2/trace/otlp",
   headers: {
-    "Content-Type": "application/json",
     "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
   },
 });
