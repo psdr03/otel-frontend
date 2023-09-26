@@ -1,0 +1,19 @@
+{
+  "name": "otel-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server": "cross-env NODE_ENV=production OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=http/protobuf OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=https://ingest.au0.signalfx.com/v2/trace/otlp SPLUNK_ACCESS_TOKEN=UHia8bnSgwz8zR6IEl8mQg node --require ./instrumentation.js server.js"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
