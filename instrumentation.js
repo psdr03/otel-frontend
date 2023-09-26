@@ -10,7 +10,7 @@ const {
   SemanticResourceAttributes,
 } = require("@opentelemetry/semantic-conventions");
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
-import { SimpleSpanProcessor } from "@opentelemetry/sdk-trace-node";
+const { SimpleSpanProcessor } = require("@opentelemetry/sdk-trace-node");
 
 // api token VXrgZkg5TM2St1yQaS63cg
 // ingest token UHia8bnSgwz8zR6IEl8mQg
