@@ -11,11 +11,13 @@ const {
 } = require("@opentelemetry/semantic-conventions");
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 
+// api token VXrgZkg5TM2St1yQaS63cg
+// ingest token UHia8bnSgwz8zR6IEl8mQg
 // opentelemetry
 const exporter = new OTLPTraceExporter({
   url: "https://ingest.au0.signalfx.com/v2/trace/otlp",
   headers: {
-    Authorization: "Bearer UHia8bnSgwz8zR6IEl8mQg",
+    "X-SF-TOKEN": "VXrgZkg5TM2St1yQaS63cg",
   },
 });
 const sdk = new NodeSDK({
