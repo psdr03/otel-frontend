@@ -25,10 +25,11 @@ const sdk = new NodeSDK({
   resource: new Resource({
     [SemanticResourceAttributes.SERVICE_NAME]: "sho-website",
   }),
-  spanProcessor: new BatchSpanProcessor(exporter, {
-    maxQueueSize: 2048,
-    maxExportBatchSize: 512,
-  }),
+  // spanProcessor: new BatchSpanProcessor(exporter, {
+  //   maxQueueSize: 2048,
+  //   maxExportBatchSize: 512,
+  // }),
+  spanProcessor: new SimpleSpanProcessor(exporter),
   instrumentations: [
     getNodeAutoInstrumentations({
       "@opentelemetry/instrumentation-fs": { enabled: false },
