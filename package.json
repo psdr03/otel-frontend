@@ -10,6 +10,11 @@
     "server": "cross-env NODE_ENV=production OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=http/protobuf OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=https://ingest.au0.signalfx.com/v2/trace/otlp SPLUNK_ACCESS_TOKEN=UHia8bnSgwz8zR6IEl8mQg node --require ./instrumentation.js server.js"
   },
   "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.39.2",
+    "@opentelemetry/resources": "^1.17.0",
+    "@opentelemetry/sdk-node": "^0.43.0",
+    "@opentelemetry/sdk-trace-base": "^1.17.0",
+    "@opentelemetry/semantic-conventions": "^1.17.0",
     "cross-env": "^7.0.3",
     "express": "^4.18.2",
     "next": "latest",
