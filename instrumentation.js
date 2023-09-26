@@ -13,11 +13,13 @@ const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 
 // api token VXrgZkg5TM2St1yQaS63cg
 // ingest token UHia8bnSgwz8zR6IEl8mQg
+// both ish5gWj9-CxjMvrLiCd9QQ
 // opentelemetry
 const exporter = new OTLPTraceExporter({
   url: "https://ingest.au0.signalfx.com/v2/trace/otlp",
   headers: {
-    "X-SF-TOKEN": "VXrgZkg5TM2St1yQaS63cg",
+    "Content-Type": "application/json",
+    "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
   },
 });
 const sdk = new NodeSDK({
