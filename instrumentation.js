@@ -31,7 +31,7 @@ const sdk = new NodeSDK({
     maxQueueSize: 2048,
     maxExportBatchSize: 512,
   }),
-  spanProcessor: new SimpleSpanProcessor(exporter),
+  // spanProcessor: new SimpleSpanProcessor(exporter),
   instrumentations: [
     getNodeAutoInstrumentations({
       "@opentelemetry/instrumentation-fs": { enabled: false },
