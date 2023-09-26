@@ -12,7 +12,13 @@ const {
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 
 // opentelemetry
-const exporter = new OTLPTraceExporter();
+const exporter = new OTLPTraceExporter({
+  url: "https://ingest.au0.signalfx.com/v2/trace/otlp",
+  headers: {
+    "x-sf-token": "UHia8bnSgwz8zR6IEl8mQg",
+    Authorization: "UHia8bnSgwz8zR6IEl8mQg",
+  },
+});
 const sdk = new NodeSDK({
   resource: new Resource({
     [SemanticResourceAttributes.SERVICE_NAME]: "sho-website",
