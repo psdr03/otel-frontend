@@ -16,10 +16,14 @@ const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 // ingest token UHia8bnSgwz8zR6IEl8mQg - WORKS
 // both ish5gWj9-CxjMvrLiCd9QQ - WORKS
 // opentelemetry
+
+// https://ingest.au0.signalfx.com/v2/trace/otlp
+// https://ingest.au0.signalfx.com/v2/trace/sapm
+// "application/x-protobuf",
 const exporter = new OTLPTraceExporter({
-  url: "https://ingest.au0.signalfx.com/v2/trace/sapm",
+  url: "https://ingest.au0.signalfx.com/v2/trace",
   headers: {
-    "Content-Type": "application/x-protobuf",
+    "Content-Type": "application/json",
     "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
   },
 });
