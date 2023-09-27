@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "cross-env NODE_ENV=production  OTEL_SERVICE_NAME=frontend OTEL_PROPAGATORS=tracecontext OTEL_LOG_LEVEL=DEBUG OTEL_TRACES_SAMPLER=always_on node --require @opentelemetry/auto-instrumentations-node/register --require ./instrumentation.js server.js"
+    "server": "cross-env NODE_ENV=production OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=https://ingest.au0.signalfx.com/v2/trace/otlp OTEL_EXPORTER_OTLP_HEADERS='X-SF-TOKEN=ish5gWj9-CxjMvrLiCd9QQ,Content-Type=application/x-protobuf' OTEL_SERVICE_NAME=frontend OTEL_PROPAGATORS=tracecontext OTEL_LOG_LEVEL=DEBUG OTEL_TRACES_SAMPLER=always_on node --require @opentelemetry/auto-instrumentations-node/register --require ./instrumentation.js server.js"
   },
   "dependencies": {
     "@opentelemetry/auto-instrumentations-node": "^0.39.2",
