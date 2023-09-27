@@ -22,19 +22,19 @@ const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 // "application/x-protobuf",
 // "application/json"
 
-const exporter = new OTLPTraceExporter({
-  headers: {
-    "Content-Type": "application/json",
-    "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
-  },
-});
+// const exporter = new OTLPTraceExporter({
+//   headers: {
+//     "Content-Type": "application/json",
+//     "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
+//   },
+// });
 
 // const exporter = new OTLPTraceExporter();
 const sdk = new NodeSDK({
   resource: new Resource({
     [SemanticResourceAttributes.SERVICE_NAME]: "sho-website",
   }),
-  spanProcessor: new BatchSpanProcessor(exporter, {
+  spanProcessor: new BatchSpanProcessor(new OTLPTraceExporter(), {
     maxQueueSize: 2048,
     maxExportBatchSize: 512,
   }),
