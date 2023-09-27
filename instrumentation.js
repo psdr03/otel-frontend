@@ -12,19 +12,19 @@ const {
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 // const { SimpleSpanProcessor } = require("@opentelemetry/sdk-trace-node");
 
-// api token VXrgZkg5TM2St1yQaS63cg
-// ingest token UHia8bnSgwz8zR6IEl8mQg
-// both ish5gWj9-CxjMvrLiCd9QQ
+// api token VXrgZkg5TM2St1yQaS63cg - DOES NOT WORK 401 on the endpoint
+// ingest token UHia8bnSgwz8zR6IEl8mQg - WORKS
+// both ish5gWj9-CxjMvrLiCd9QQ - WORKS
 // opentelemetry
-// const exporter = new OTLPTraceExporter({
-//   url: "https://ingest.au0.signalfx.com/v2/trace/otlp",
-//   headers: {
-//     "Content-Type": "application/x-protobuf",
-//     "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
-//   },
-// });
+const exporter = new OTLPTraceExporter({
+  url: "https://ingest.au0.signalfx.com/v2/trace/sapm",
+  headers: {
+    "Content-Type": "application/x-protobuf",
+    "X-SF-TOKEN": "ish5gWj9-CxjMvrLiCd9QQ",
+  },
+});
 
-const exporter = new OTLPTraceExporter();
+// const exporter = new OTLPTraceExporter();
 const sdk = new NodeSDK({
   resource: new Resource({
     [SemanticResourceAttributes.SERVICE_NAME]: "sho-website",
