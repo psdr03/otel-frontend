@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const callEndpointOnClick = async () => {
   const res = await fetch(
-    "https://ew96341sk8.execute-api.ap-southeast-1.amazonaws.com/"
+    "https://vory65wxld.execute-api.ap-southeast-1.amazonaws.com/dev/"
   );
   const data = await res.json();
   console.log(data);
